@@ -1,9 +1,8 @@
-
 import java.util.Scanner;
-
-
+ 
+ 
 public class SumOfManyNumbers {
-
+ 
     public static void main(String[] args) {
         Scanner reader = new Scanner(System.in);
         int sum = 0;
@@ -13,9 +12,9 @@ public class SumOfManyNumbers {
             if (read == 0) {
                 break;
             }
-
-            // do something here
-
+ 
+            sum += read;
+ 
             System.out.println("Sum now: " + sum);
         }
         
