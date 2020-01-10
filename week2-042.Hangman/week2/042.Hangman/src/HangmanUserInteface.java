@@ -1,31 +1,34 @@
-
-import hangman.Hangman;
+import java.util.Random;
 import java.util.Scanner;
-
-public class HangmanUserInteface {
-
+ 
+public class GuessingNumberGame {
+ 
     public static void main(String[] args) {
         Scanner reader = new Scanner(System.in);
-        Hangman hangman = new Hangman();
-
-        System.out.println("***********");
-        System.out.println("* HANGMAN  *");
-        System.out.println("***********");
-        System.out.println("");
-        printMenu();
-        System.out.println("");
-
-        // PROGRAM YOUR SOLUTION HERE
-
-
-        System.out.println("Thank you for playing!");
+        int numberDrawn = drawNumber();
+ 
+        // program your solution here. Do not touch the above lines!
+        System.out.println("Guess a number:");
+        int userNum = Integer.parseInt(reader.nextLine());
+        int numOfGuess = 1;
+        
+        while(userNum != numberDrawn){
+            if(userNum > numberDrawn){
+                System.out.println("Number is lesser, guesses made: " + numOfGuess);
+            }
+            else{
+                System.out.println("Number is greater, guesses made: " + numOfGuess);
+            }
+            numOfGuess++;
+            System.out.println("Guess a number:");
+            userNum = Integer.parseInt(reader.nextLine());
+        }
+        
+        System.out.println("Congratulations, your guess is correct!");
     }
-
-    public static void printMenu() {
-        System.out.println(" * menu *");
-        System.out.println("quit   - quits the game");
-        System.out.println("status  - prints the game status");
-        System.out.println("a single letter uses the letter as a guess");
-        System.out.println("an empty line prints this menu");
+ 
+    // DO NOT MODIFY THIS!
+    private static int drawNumber() {
+        return new Random().nextInt(101);
     }
 }
