@@ -1,4 +1,3 @@
-
 import java.util.Scanner;
 
 public class ReversingText {
@@ -6,7 +5,14 @@ public class ReversingText {
     public static String reverse(String text) {
         // write your code here
         // note that method does now print anything, it RETURNS the reversed string
-        return "";
+        String reverseText = "";
+        int currentIndex = text.length() - 1;
+        while(currentIndex >=0){
+            reverseText += text.charAt(currentIndex);
+            currentIndex--;
+        }
+        
+        return reverseText;
     }
 
     public static void main(String[] args) {
